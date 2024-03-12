@@ -52,15 +52,22 @@
             <div class="row">
                 <!-- Dummy featured job listings -->
                 @foreach ($featuredJobs as $job)
-                    <div class="col-md-4">
-                        <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title">{{ $job['title'] }}</h5>
-                                <p class="card-text">{{ $job['company'] }}</p>
-                                <a href="#" class="btn btn-primary">View Details</a>
-                            </div>
-                        </div>
-                    </div>
+                <div class="card mb-4">
+        <!-- Company logo -->
+        <img src="{{ $job['company_logo'] }}" class="card-img-top" alt="Company Logo">
+        <div class="card-body">
+            <!-- Job title -->
+            <h5 class="card-title">{{ $job['title'] }}</h5>
+            <!-- Location -->
+            <p class="card-text">Location: {{ $job['location'] }}</p>
+            <!-- Salary -->
+            <p class="card-text">Salary: {{ $job['salary'] }}</p>
+            <!-- Freelance/Fulltime badge -->
+            <span class="custom-badge">{{ $job['type'] }}</span>
+            <!-- Button to view details -->
+            <a href="#" style = "text-align: left" class="btn btn-primary mt-2">View Details</a>
+        </div>
+    </div>
                 @endforeach
             </div>
         </div>
@@ -85,4 +92,40 @@
             </div>
         </div>
     </section>
+
+    <section class="how-it-works-section">
+    <div class="container">
+        <h2 class="text-center mb-5">How It Works</h2>
+        <div class="row justify-content-center">
+            <div class="col-lg-6 col-md-8">
+                <div class="step">
+                    <h3>Browse Jobs</h3>
+                    <p>Explore a wide range of job opportunities from various companies.</p>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-8">
+                <div class="step">
+                    <h3>Apply for Jobs</h3>
+                    <p>Apply for your desired jobs directly through our platform.</p>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-8">
+                <div class="step">
+                    <h3>Connect with Companies</h3>
+                    <p>Connect with companies and hiring managers to expand your network.</p>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-8">
+                <div class="step">
+                    <h3>Find Talent</h3>
+                    <p>Post job listings and find the perfect candidates for your company.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
 @endsection

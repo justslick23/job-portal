@@ -5397,6 +5397,42 @@ textarea.form-control-lg {
   vertical-align: baseline;
   border-radius: 0.45rem;
 }
+
+.custom-badge {
+  display: inline-block;
+  padding: 5px 10px;
+  background-color: #007bff;
+  color: #fff;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.how-it-works-section {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.step {
+  background-color: #f9f9f9;
+  padding: 30px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.step h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.step p {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 0;
+}
+
+
 .badge:empty {
   display: none;
 }

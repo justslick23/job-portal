@@ -31,10 +31,36 @@ class HomeController extends Controller
 
             // Dummy data for featured jobs
             $featuredJobs = [
-                ['title' => 'Software Engineer', 'company' => 'ABC Tech Inc'],
-                ['title' => 'Marketing Specialist', 'company' => 'XYZ Marketing Agency'],
-                ['title' => 'Data Analyst', 'company' => 'Data Analytics Co'],
+                [
+                    'company_logo' => 'path/to/company1_logo.jpg',
+                    'title' => 'Software Engineer',
+                    'location' => 'New York, NY',
+                    'salary' => '$80,000 - $100,000',
+                    'type' => 'Fulltime',
+                ],
+                [
+                    'company_logo' => 'path/to/company2_logo.jpg',
+                    'title' => 'Web Developer',
+                    'location' => 'San Francisco, CA',
+                    'salary' => '$70,000 - $90,000',
+                    'type' => 'Freelance',
+                ],
+                [
+                    'company_logo' => 'path/to/company3_logo.jpg',
+                    'title' => 'Data Scientist',
+                    'location' => 'Los Angeles, CA',
+                    'salary' => '$90,000 - $120,000',
+                    'type' => 'Fulltime',
+                ],
+                [
+                    'company_logo' => 'path/to/company4_logo.jpg',
+                    'title' => 'UI/UX Designer',
+                    'location' => 'Chicago, IL',
+                    'salary' => '$75,000 - $95,000',
+                    'type' => 'Freelance',
+                ],
             ];
+            
     
             // Dummy data for popular job categories
             $popularCategories = ['IT & Software', 'Marketing', 'Data Science', 'Finance', 'Engineering'];
