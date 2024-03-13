@@ -76,6 +76,7 @@ if ($request->hasFile('logo')) {
  public function getCompaniesByUser() {
     $user = auth()->user();
     $companies = $user->companies;
+
     return view('jobseeker.companies', compact('companies'));
  }
 }
