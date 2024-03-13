@@ -43,7 +43,9 @@ Route::get('/', function () {return redirect('/dashboard');})->middleware('auth'
 
 
 Route::group(['middleware' => 'auth'], function () {
-	Route::get('/jobseeker/companies', [HomeController::class, 'getCompaniesByUser'])->name('companies');
+	Route::get('/companies', [CompanyController::class, 'getCompaniesByUser'])->name('companies');
+	Route::get('/create-company', [CompanyController::class, 'create'])->name('companies.create');
+	Route::post('/create-company', [CompanyController::class, 'store'])->name('companies.store');
 
 	Route::get('/dashboard', [HomeController::class, 'dashboard'])->name('jobseeker.dashboard');
 

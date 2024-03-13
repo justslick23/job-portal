@@ -9992,7 +9992,6 @@ textarea.form-control-lg {
 
 .min-height-300 {
   height: 100vh !important;
-  background-image: linear-gradient(180deg, #007bff 0%, #ffffff 100%); /* Blue to white gradient */
 
 }
 
