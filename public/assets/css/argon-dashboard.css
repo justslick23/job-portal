@@ -9991,7 +9991,9 @@ textarea.form-control-lg {
 }
 
 .min-height-300 {
-  min-height: 300px !important;
+  height: 100vh !important;
+  background-image: linear-gradient(180deg, #007bff 0%, #ffffff 100%); /* Blue to white gradient */
+
 }
 
 .min-height-400 {
@@ -19664,7 +19666,7 @@ textarea.form-control-lg {
   padding: 1.5rem;
 }
 .card .card-body {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Manrope", sans-serif;
   padding: 1.5rem;
 }
 .card.card-plain {
@@ -20394,7 +20396,7 @@ label,
 }
 
 .bg-gradient-primary {
-  background-image: linear-gradient(310deg, #fb6340 0%, #f56036 100%);
+  background-image: linear-gradient(310deg, #007bff 0%, #00bfff 100%);
 }
 
 .bg-gradient-secondary {
@@ -21875,7 +21877,6 @@ hr.horizontal.gray-light {
 }
 
 .g-sidenav-show .sidenav .nav-item .collapse {
-  height: auto;
   transition: all 0.2s ease-in-out;
 }
 @media (prefers-reduced-motion: reduce) {
@@ -23098,7 +23099,7 @@ p {
 }
 
 .text-sans-serif {
-  font-family: "Open Sans", sans-serif !important;
+  font-family: "Manrope", sans-serif !important;
 }
 
 .text-monospace {
@@ -24915,3 +24916,33 @@ pre[class*=language-] {
     overflow: auto !important;
   }
 }
+
+/* Custom styles for the registration tabs */
+.nav-pills .nav-link {
+  color: #525f7f;
+  border-radius: 0;
+  font-size: 18px;
+  padding: 15px 20px;
+  margin-right: 10px;
+  background-color: transparent;
+  border: none;
+  transition: all 0.3s;
+}
+
+.nav-pills .nav-link.active {
+  color: #32325d;
+  background-color: #f6f9fc;
+  border-color: #f6f9fc;
+  font-weight: bold;
+}
+
+.nav-pills .nav-link:hover {
+  background-color: #f6f9fc;
+}
+
+.tab-content {
+  border: 1px solid #f6f9fc;
+  padding: 20px;
+  border-top: none;
+}
+

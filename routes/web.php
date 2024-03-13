@@ -28,19 +28,25 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\UserProfileController;
 use App\Http\Controllers\ResetPassword;
 use App\Http\Controllers\ChangePassword;            
+use App\Http\Controllers\CompanyController;
             
 
 Route::get('/', function () {return redirect('/dashboard');})->middleware('auth');
 	Route::get('/register', [RegisterController::class, 'create'])->middleware('guest')->name('register');
-	Route::post('/register', [RegisterController::class, 'store'])->middleware('guest')->name('register.perform');
+	Route::post('/register', [RegisterController::class, 'register'])->middleware('guest')->name('register.perform');
 	Route::get('/login', [LoginController::class, 'show'])->middleware('guest')->name('login');
 	Route::post('/login', [LoginController::class, 'login'])->middleware('guest')->name('login.perform');
 	Route::get('/reset-password', [ResetPassword::class, 'show'])->middleware('guest')->name('reset-password');
 	Route::post('/reset-password', [ResetPassword::class, 'send'])->middleware('guest')->name('reset.perform');
 	Route::get('/change-password', [ChangePassword::class, 'show'])->middleware('guest')->name('change-password');
 	Route::post('/change-password', [ChangePassword::class, 'update'])->middleware('guest')->name('change.perform');
-	Route::get('/dashboard', [HomeController::class, 'index'])->name('home')->middleware('auth');
+
+
 Route::group(['middleware' => 'auth'], function () {
+	Route::get('/jobseeker/companies', [HomeController::class, 'getCompaniesByUser'])->name('companies');
+
+	Route::get('/dashboard', [HomeController::class, 'dashboard'])->name('jobseeker.dashboard');
+
 	Route::get('/virtual-reality', [PageController::class, 'vr'])->name('virtual-reality');
 	Route::get('/rtl', [PageController::class, 'rtl'])->name('rtl');
 	Route::get('/profile', [UserProfileController::class, 'show'])->name('profile');
@@ -51,3 +57,4 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::get('/{page}', [PageController::class, 'index'])->name('page');
 	Route::post('logout', [LoginController::class, 'logout'])->name('logout');
 });
+

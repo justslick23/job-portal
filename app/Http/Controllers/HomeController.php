@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -25,6 +26,35 @@ class HomeController extends Controller
     {
         return view('pages.dashboard');
     }
+
+    public function dashboard() {
+
+        if (auth()->user()->role == "jobseeker") {
+            return view('jobseeker.dashboard');
+        }
+    }
+
+    public function getCompaniesByUser() {
+        $user = auth()->user();
+        // $companies = $user->companies;
+         // Dummy data for companies
+         $companies = [
+            (object) [
+                'name' => 'Company A',
+                'website' => 'www.companyA.com',
+                'email' => 'info@companyA.com',
+                // Add more properties as needed
+            ],
+            (object) [
+                'name' => 'Company B',
+                'website' => 'www.companyB.com',
+                'email' => 'info@companyB.com',
+                // Add more properties as needed
+            ],
+            // Add more dummy companies as needed
+        ];
+        return view('pages.companies', compact('companies'));
+     }
 
     public function home()
     {
